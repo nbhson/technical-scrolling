@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollytelling Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="spacer">
+        <div class="content">
+            <h1>Scroll Down</h1>
+            <p>Trải nghiệm hiệu ứng "Pinning".</p>
+            <div class="scroll-indicator">↓</div>
+        </div>
+    </section>
+
+    <!-- The Pinned Section -->
+    <section class="pinned-section-wrapper">
+        <div class="pinned-element">
+            <div class="pinned-content">
+                <h2 id="dynamic-title">Giữ Nguyên Viewport</h2>
+                <div class="cards-container">
+                    <div class="card card-1" style="--i: 1">
+                        <h3>Điều 1</h3>
+                        <p>Nội dung vẫn cố định...</p>
+                    </div>
+                    <div class="card card-2" style="--i: 2">
+                        <h3>Điều 2</h3>
+                        <p>...trong khi bạn vẫn scroll.</p>
+                    </div>
+                    <div class="card card-3" style="--i: 3">
+                        <h3>Điều 3</h3>
+                        <p>Thật tuyệt đúng không?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="progress-bar"></div>
+        </div>
+    </section>
+
+    <section class="spacer">
+        <div class="content">
+            <h1>Kết Thúc</h1>
+            <p>Tiếp tục hành trình.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
