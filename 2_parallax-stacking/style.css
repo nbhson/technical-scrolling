@@ -1,0 +1,73 @@
+/* Basic Setup */
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+/* 
+   We need a tall body to allow scrolling.
+   4 sections * 100vh = 400vh total height.
+*/
+body {
+    height: 400vh;
+}
+
+/* Sections are now Fixed, stacked on top of each other */
+section {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+
+    /* Transition for smooth cleanup if needed, but we rely on direct JS mapping */
+    will-change: transform;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    /* Shadow to show depth */
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+
+/* Stacking Order: First section on TOP */
+#section1 {
+    z-index: 4;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+#section2 {
+    z-index: 3;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+}
+
+#section3 {
+    z-index: 2;
+    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+#section4 {
+    z-index: 1;
+    background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}

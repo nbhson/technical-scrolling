@@ -1,0 +1,110 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1,
+h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* This container holds the content that scrolls OVER the curtain */
+.main-content {
+    position: relative;
+    z-index: 2;
+    /* Higher z-index to sit on top */
+    background: #fff;
+    margin-bottom: 100vh;
+    /* Adjust this to match curtain height if needed, or just let it flow */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 5rem;
+    margin: 0;
+}
+
+.content-block {
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* The Curtain */
+.curtain-container {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    z-index: 1;
+    /* Lower z-index so it stays behind */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    /* Let clicks pass through if covered */
+}
+
+/* We need a fix here. 
+   "sticky" bottom: 0 works for a footer reveal if the footer comes *after* the content in DOM 
+   but we want the content to scroll *away* to reveal it? 
+   
+   Actually, a common pattern for "curtain" is:
+   1. Fixed background that stays put while content scrolls over it.
+   2. Or a footer that is revealed as you scroll past the bottom of the main content.
+   
+   Let's do the "Footer Reveal" style.
+*/
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    /* Reset from above */
+    margin-bottom: 100vh;
+    /* Must be equal to curtain height */
+}
+
+.curtain-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    /* Behind everything */
+    background: #222;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+}
+
+.curtain-content {
+    text-align: center;
+}
+
+.curtain h1 {
+    font-size: 4rem;
+    color: #ffd700;
+}
